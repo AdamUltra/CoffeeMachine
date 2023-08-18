@@ -1,0 +1,2 @@
+# CoffeeMachine
+A virtual CoffeeMachine
