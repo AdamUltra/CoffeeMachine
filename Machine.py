@@ -45,7 +45,8 @@ def check_ingredients(flavor):
     """
     To check if there is enough resources for the flavor
     """
-    global shortage
+    global shortage, shortage_materials
+    shortage_materials = []
     shortage = False
     for ingredient in MENU[flavor]['ingredients']:
         material_needed = MENU[flavor]['ingredients'][ingredient]
@@ -55,6 +56,7 @@ def check_ingredients(flavor):
             shortage = True
     if shortage:
         print(f'Sorry we have a shortage in {shortage_materials}')
+        order()
 
     else:
         print(f"The {flavor} would be ${cost}")
